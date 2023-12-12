@@ -12,20 +12,7 @@ public class SnorkMaiden extends Character{
     }
 
     public void toAdmire(String what){
-
-        int k = (int) (Math.random() * 2);
-
-        switch (k){
-            case 0 -> emotion = HAPPY;
-            case 1 -> emotion = SAD;
-            case 2 -> emotion = PLEASURE;
-        }
-
-        switch (emotion){
-            case HAPPY -> System.out.print(" любовалась " + what);
-            case SAD -> System.out.print(" с ненавестью рассматривала " + what);
-            case PLEASURE -> System.out.print(" спокойно смотрела на " + what);
-        }
+        System.out.print(" с ненавестью рассматривала " + what);
     }
 
     @Override
