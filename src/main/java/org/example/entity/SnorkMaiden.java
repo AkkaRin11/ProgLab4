@@ -2,13 +2,30 @@ package org.example.entity;
 
 import org.example.Data.Emotion;
 
+import static org.example.Data.Emotion.*;
+
 public class SnorkMaiden extends Character{
+    private Emotion emotion;
+
     public void perched(String loc){
         System.out.print(" Фрёкен Снорк примостилась " + loc);
     }
 
     public void toAdmire(String what){
-        System.out.print(" любовалась " + what);
+
+        int k = (int) (Math.random() * 2);
+
+        switch (k){
+            case 0 -> emotion = HAPPY;
+            case 1 -> emotion = SAD;
+            case 2 -> emotion = PLEASURE;
+        }
+
+        switch (emotion){
+            case HAPPY -> System.out.print(" любовалась " + what);
+            case SAD -> System.out.print(" с ненавестью рассматривала " + what);
+            case PLEASURE -> System.out.print(" спокойно смотрела на " + what);
+        }
     }
 
     @Override
@@ -42,9 +59,19 @@ public class SnorkMaiden extends Character{
     @Override
     public void experiencingEmotions(Emotion emotion) {
         switch (emotion){
-            case PLEASURE -> System.out.print(" Фрёкен Снорк была удовлетворена");
-            case SAD -> System.out.print(" Фрёкен Снорк было грустно");
-            case HAPPY -> System.out.print(" Фрёкен Снорк была счастлива");
+            case PLEASURE -> {
+                this.emotion = emotion;
+                System.out.print(" Фрёкен Снорк была удовлетворена");
+            }
+
+            case SAD -> {
+                this.emotion = emotion;
+                System.out.print(" Фрёкен Снорк было грустно");
+            }
+            case HAPPY -> {
+                this.emotion = emotion;
+                System.out.print(" Фрёкен Снорк была счастлива");
+            }
         }
     }
 }

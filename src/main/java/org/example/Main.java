@@ -4,8 +4,9 @@ import org.example.Data.PartOfBoat;
 import org.example.entity.*;
 import org.example.exceptions.MentalException;
 import org.example.exceptions.PawException;
-import org.example.interf.PartOfBody;
 import org.example.location.*;
+
+import static org.example.utils.Util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -98,26 +99,5 @@ public class Main {
         addDot();
         muumimamma.toLaugh();
         addDot();
-    }
-
-
-    public static void addComa(){
-        System.out.print(",");
-    }
-
-    public static void addDot(){
-        System.out.print(".");
-    }
-
-    public static void addEndl(){
-        System.out.println();
-    }
-
-    public static void addBut(){
-        System.out.print(" но");
-    }
-
-    public static void addAnd(){
-        System.out.print(" и");
     }
 }
